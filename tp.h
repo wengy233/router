@@ -2,8 +2,7 @@
 //  tp.h
 //  3
 //
-//  Created by 翁月 on 2017/12/25.
-//  Copyright © 2017年 翁月. All rights reserved.
+//  Create
 //
 
 #ifndef tp_h
@@ -168,39 +167,5 @@ void Graphmtx::Shortest(int v){
     }
     printPath(v,dist,path);
 }
-void Graphmtx::printPath(int v, int dist[], int path[])
-{
-    cout << "| 路由器" << p[v] <<"路由表：" <<"           |"<< endl;
-    int i, j, k, n =numVertices;
-    int * d = new int[n];
-    for (i = 0; i<n; i++)
-    {
-        if (i != v)
-        {
-            j = i;
-            k = 0;
-            while (j != v)
-            {
-                d[k++] = j;
-                j = path[j];
-            }
-            cout <<"| 目的路由"<<p[i]<<" ";
-            cout <<"下一跳："<<d[--k]+1<<" ";
-            cout << "权值：" << dist[i] <<" |"<< endl;
-        }
-    }
-    delete[] d;
-}
-void Graphmtx::shuchu(){
-    for(int i=0;i<numVertices;i++){
-        for(int j=0;j<numVertices;j++){
-            if(Edge[i][j]==INT_MAX){
-                cout<<"Max ";
-            }
-            else
-                cout<<Edge[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-}
+
 #endif /* tp_h */
